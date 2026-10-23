@@ -16,3 +16,28 @@ This distinction matters. AWS, Amazon Bedrock, vector search, and PostgreSQL are
 | PostgreSQL | No connection configuration, schema, ORM models, or migrations | Not verified; not implemented in repository |
 | Tests, lint, and build | No test or tooling configuration | No project commands available |
 | License | Root `LICENSE` | MIT License |
+
+## Product objectives
+
+The stated direction is to support healthcare document workflows and intelligent information retrieval. A complete implementation may eventually include ingestion, parsing, chunking, indexing, search, and AI-assisted responses. These are product objectives only: the current repository does not establish which workflows exist, what data they accept, or what outputs they produce.
+
+## Architecture and implementation boundary
+
+There is no verifiable runtime architecture yet. The diagram below shows the proposed conceptual flow implied by the project brief; it is not a description of deployed or implemented components. Service names and boundaries must be updated when source code and infrastructure are added.
+
+```mermaid
+flowchart LR
+    U[User] --> FE[Frontend - not present]
+    FE --> API[Backend API - not present]
+    API --> DB[(PostgreSQL - proposed, unverified)]
+    API --> ING[Document processing - proposed, unverified]
+    ING --> STORE[Document storage - service unverified]
+    ING --> EMB[Embedding generation - provider unverified]
+    EMB --> IDX[Vector index/search - service unverified]
+    API --> RET[Retrieval and response orchestration - unverified]
+    IDX --> RET
+    RET --> FM[Foundation model - provider/model unverified]
+    FM --> API
+```
+
+No component boundaries, network paths, queues, failure handling, or security controls can be confirmed from the checked-in project. In a future implementation, document authentication and authorization at each boundary, encryption in transit and at rest, tenant or patient data isolation, retry and idempotency behavior, and the effect of dependency outages. Do not treat this conceptual diagram as an approved deployment design.
