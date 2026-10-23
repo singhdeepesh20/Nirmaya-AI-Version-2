@@ -47,3 +47,9 @@ No component boundaries, network paths, queues, failure handling, or security co
 The project brief names AWS, Amazon Bedrock, vector search, and PostgreSQL as intended technologies. The repository does not include dependency declarations, code, or infrastructure that verifies any specific AWS service or database product. In particular, it does not establish use of S3, OpenSearch, Aurora, RDS, Lambda, ECS, EKS, or any other named AWS service.
 
 There are no confirmed AWS regions, accounts, authentication methods, IAM roles, permissions, network rules, or encryption settings. No credentials or environment variables are documented because none are defined in the repository.
+
+## Bedrock, embeddings, and semantic retrieval
+
+There are no configured foundation model or embedding model IDs, inference calls, prompt templates, token limits, retry policies, or model response handling in the repository. It is not possible to say whether inference or embeddings use Bedrock or another provider.
+
+No chunking strategy, embedding dimensions, vector database, similarity metric, index configuration, metadata filters, access controls, or source attribution behavior is present. RAG, citations, and retrieval-grounded response generation are therefore unverified and should not be described as available features.
