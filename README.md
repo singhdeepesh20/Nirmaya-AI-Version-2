@@ -98,3 +98,20 @@ The repository defines no environment variables or configuration files. A safe e
 ## API, tests, linting, and builds
 
 No API routes, OpenAPI document, test suite, linter, formatter, or build configuration is present. There are no repository-backed commands for API inspection, testing, linting, or building. Add these alongside the relevant application code and update this section with commands that have been run successfully.
+
+## Security, privacy, and operational readiness
+
+This repository does not implement or demonstrate authentication, authorization, encryption, audit logging, secret management, backups, monitoring, alerting, incident response, or data retention. It provides no basis for claiming that healthcare information is protected or that the platform meets HIPAA or any other regulatory requirement. Compliance depends on the actual system, operating processes, contracts, and applicable jurisdiction; it cannot be inferred from the product description or technology choices.
+
+Before processing real or sensitive health data, establish and review at least:
+
+- Data classification, permitted use, retention, deletion, and backup policies.
+- Identity and least-privilege access controls for users, services, and operators.
+- Encryption and key management for stored data, backups, and network traffic.
+- Tenant and patient-level isolation for records, retrieval results, and logs.
+- Safe logging and tracing that avoid storing document contents or sensitive identifiers unnecessarily.
+- Dependency and image management, vulnerability response, audit trails, and incident procedures.
+- Tested restore, outage, retry, and data deletion behavior.
+- Applicable privacy, security, and healthcare regulatory reviews before production use.
+
+These are readiness areas, not guarantees provided by the current scaffold.
