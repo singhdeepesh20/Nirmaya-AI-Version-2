@@ -59,3 +59,34 @@ No chunking strategy, embedding dimensions, vector database, similarity metric, 
 No PostgreSQL connection settings, SQLAlchemy models, schema, relationships, transaction management, connection pooling, or Alembic migrations are checked in. There is no database initialization or migration command to run. Avoid creating or modifying a database based on assumptions; add a reviewed schema and migration workflow first.
 
 Likewise, no document upload endpoint, file validation, malware scanning, OCR or parsing, queue/worker, object storage, retention policy, or deletion workflow is present. Accepted formats, size limits, processing guarantees, and data lifecycle behavior are unknown.
+
+## Repository layout
+
+```text
+.
+├── LICENSE
+└── README.md
+```
+
+This is the complete tracked project structure at the time of writing. The local `.venv` directory is a development environment and is not part of the tracked source listing.
+
+## Prerequisites and local setup
+
+Python 3.13.4 was available in the workspace when this README was prepared. No Python package manifest or application entry point is present, so creating a virtual environment is the only currently verifiable Python setup step.
+
+```bash
+python3 --version
+python3 -m venv .venv
+```
+
+Activate it with the command for your shell:
+
+```bash
+# macOS / Linux (bash or zsh)
+source .venv/bin/activate
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+```
+
+There are no dependencies to install from this repository and no server command to run. Once a dependency manifest and application entry point are added, document the supported Python version, install command, and launch command here. Do not copy secrets into this README.
