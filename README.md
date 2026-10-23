@@ -126,3 +126,22 @@ There are no Docker files, CI/CD workflows, AWS CDK, CloudFormation, Terraform, 
 - **There is no dependency install command:** no `pyproject.toml`, requirements file, or equivalent manifest is present.
 - **There is no database setup command:** schema and migration tooling are not present.
 - **AWS or model configuration is unclear:** no service identifiers, model IDs, regions, or configuration keys are defined.
+
+## Roadmap for this repository
+
+The following are suggested next implementation milestones, not existing capabilities:
+
+1. Add application code and define API and user-facing workflows.
+2. Choose and document storage, database, queue, model, and vector-search services.
+3. Implement ingestion, data lifecycle controls, retrieval, and model orchestration with access checks and source attribution as requirements dictate.
+4. Add schema migrations, automated tests, static checks, and reproducible local development instructions.
+5. Add reviewed infrastructure, least-privilege IAM, observability, backup/restore, and deployment runbooks.
+6. Complete privacy, security, and regulatory reviews before handling real health data.
+
+## Contributing
+
+There are no contribution or code review instructions yet. For now, keep changes scoped, document new setup and operational requirements, and include tests and security review appropriate to each feature when implementation begins.
+
+## License
+
+This project is distributed under the [MIT License](LICENSE).
