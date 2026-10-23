@@ -115,3 +115,14 @@ Before processing real or sensitive health data, establish and review at least:
 - Applicable privacy, security, and healthcare regulatory reviews before production use.
 
 These are readiness areas, not guarantees provided by the current scaffold.
+
+## Deployment
+
+There are no Docker files, CI/CD workflows, AWS CDK, CloudFormation, Terraform, Kubernetes manifests, or deployment instructions in the repository. No deployment target or AWS topology can be verified. Do not provision infrastructure based on the conceptual diagram above; first add and review the infrastructure definitions, IAM policies, network design, and operational runbooks.
+
+## Troubleshooting
+
+- **There is no start command:** the repository has no application entry point yet.
+- **There is no dependency install command:** no `pyproject.toml`, requirements file, or equivalent manifest is present.
+- **There is no database setup command:** schema and migration tooling are not present.
+- **AWS or model configuration is unclear:** no service identifiers, model IDs, regions, or configuration keys are defined.
