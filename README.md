@@ -53,3 +53,9 @@ There are no confirmed AWS regions, accounts, authentication methods, IAM roles,
 There are no configured foundation model or embedding model IDs, inference calls, prompt templates, token limits, retry policies, or model response handling in the repository. It is not possible to say whether inference or embeddings use Bedrock or another provider.
 
 No chunking strategy, embedding dimensions, vector database, similarity metric, index configuration, metadata filters, access controls, or source attribution behavior is present. RAG, citations, and retrieval-grounded response generation are therefore unverified and should not be described as available features.
+
+## Data layer and document pipeline
+
+No PostgreSQL connection settings, SQLAlchemy models, schema, relationships, transaction management, connection pooling, or Alembic migrations are checked in. There is no database initialization or migration command to run. Avoid creating or modifying a database based on assumptions; add a reviewed schema and migration workflow first.
+
+Likewise, no document upload endpoint, file validation, malware scanning, OCR or parsing, queue/worker, object storage, retention policy, or deletion workflow is present. Accepted formats, size limits, processing guarantees, and data lifecycle behavior are unknown.
