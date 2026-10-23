@@ -90,3 +90,11 @@ source .venv/bin/activate
 ```
 
 There are no dependencies to install from this repository and no server command to run. Once a dependency manifest and application entry point are added, document the supported Python version, install command, and launch command here. Do not copy secrets into this README.
+
+## Configuration
+
+The repository defines no environment variables or configuration files. A safe example cannot be supplied without knowing the application’s actual configuration interface. When configuration is introduced, commit a placeholder-only `.env.example`, validate required settings at startup, and keep real `.env` files and credentials out of version control. Prefer managed identity or short-lived credentials for cloud access where supported; do not embed long-lived AWS keys in source code.
+
+## API, tests, linting, and builds
+
+No API routes, OpenAPI document, test suite, linter, formatter, or build configuration is present. There are no repository-backed commands for API inspection, testing, linting, or building. Add these alongside the relevant application code and update this section with commands that have been run successfully.
