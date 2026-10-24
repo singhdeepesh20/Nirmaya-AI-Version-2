@@ -1,66 +1,86 @@
 # Nirmaya AI V2
 
-Nirmaya AI V2 is intended to become an AI-powered healthcare technology platform for document processing, semantic retrieval, and context-aware AI experiences. The current repository is an initial scaffold: it contains this README and an MIT license, but no application source, dependency manifests, infrastructure definitions, database schema, or tests.
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=30&duration=3000&pause=900&color=0F766E&center=true&vCenter=true&width=850&lines=Nirmaya+AI+V2;AI-Powered+Healthcare+Technology;Building+Intelligent+Retrieval+Systems" alt="Nirmaya AI V2 animated title" />
+</p>
 
-This distinction matters. AWS, Amazon Bedrock, vector search, and PostgreSQL are part of the project brief, but none of those integrations is implemented or configured in the checked-in files at this time. This document records what can be verified and identifies the information needed before the architecture or setup can be treated as operational.
+<p align="center">
+  <strong>Engineering a scalable foundation for AI-assisted healthcare information workflows.</strong>
+  <br />
+  <sub>Version 2 · AI Infrastructure · Cloud Engineering</sub>
+</p>
 
-## Status at a glance
+<p align="center">
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-0F766E.svg" />
+  <img alt="Status" src="https://img.shields.io/badge/Status-Under%20Development-64748b.svg" />
+</p>
 
-| Area | Repository evidence | Status |
-| --- | --- | --- |
-| Product direction | Healthcare-focused AI document processing and retrieval described in the project brief | Intended; implementation not present |
-| Frontend and API | No application source or API specification | Not present |
-| AWS services | No infrastructure code, SDK configuration, or deployment manifests | Not verified; not present in repository |
-| Bedrock models and inference | No model identifiers or inference code | Not verified; not implemented in repository |
-| Embeddings and vector search | No embedding pipeline, vector index, or retrieval code | Not verified; not implemented in repository |
-| PostgreSQL | No connection configuration, schema, ORM models, or migrations | Not verified; not implemented in repository |
-| Tests, lint, and build | No test or tooling configuration | No project commands available |
-| License | Root `LICENSE` | MIT License |
+---
 
-## Product objectives
+## Overview
 
-The stated direction is to support healthcare document workflows and intelligent information retrieval. A complete implementation may eventually include ingestion, parsing, chunking, indexing, search, and AI-assisted responses. These are product objectives only: the current repository does not establish which workflows exist, what data they accept, or what outputs they produce.
+Nirmaya AI V2 is an AI-powered healthcare technology platform envisioned to support document processing, semantic information retrieval, and context-aware AI experiences through a modular and maintainable architecture.
 
-## Architecture and implementation boundary
+The project direction includes AWS services, Amazon Bedrock foundation models, vector search, and PostgreSQL. The repository currently represents an initial scaffold; these integrations should be considered planned or unverified until their implementation is available in the codebase.
 
-There is no verifiable runtime architecture yet. The diagram below shows the proposed conceptual flow implied by the project brief; it is not a description of deployed or implemented components. Service names and boundaries must be updated when source code and infrastructure are added.
+## Engineering Principles
+
+- **Modular architecture:** Keep system components maintainable and clearly separated.
+- **Data integrity:** Design reliable persistence and controlled data lifecycle workflows.
+- **AI-enabled retrieval:** Build toward semantic search and context-aware model interactions.
+- **Security by design:** Prioritize least-privilege access, secret management, and data isolation.
+- **Cloud readiness:** Establish a foundation for observable, resilient, and cost-aware infrastructure.
+
+## Current Project Status
+
+| Component | Status |
+|---|---|
+| Product architecture | In planning |
+| Frontend and backend | Not present in the current scaffold |
+| AWS integrations | Require implementation verification |
+| Amazon Bedrock inference | Requires implementation verification |
+| Embeddings and vector search | Requires implementation verification |
+| PostgreSQL schema and migrations | Not present in the current scaffold |
+| Automated tests and CI | Not configured in the current scaffold |
+
+## Proposed Architecture
+
+The following diagram represents a conceptual target architecture, not a deployed system.
 
 ```mermaid
-flowchart LR
-    U[User] --> FE[Frontend - not present]
-    FE --> API[Backend API - not present]
-    API --> DB[(PostgreSQL - proposed, unverified)]
-    API --> ING[Document processing - proposed, unverified]
-    ING --> STORE[Document storage - service unverified]
-    ING --> EMB[Embedding generation - provider unverified]
-    EMB --> IDX[Vector index/search - service unverified]
-    API --> RET[Retrieval and response orchestration - unverified]
-    IDX --> RET
-    RET --> FM[Foundation model - provider/model unverified]
-    FM --> API
+flowchart TD
+    USER[User] --> FRONTEND[Web Application]
+    FRONTEND --> API[Backend API]
+    API --> DB[(PostgreSQL)]
+    API --> PIPELINE[Document Processing]
+    PIPELINE --> STORAGE[Document Storage]
+    PIPELINE --> EMBEDDINGS[Embedding Generation]
+    EMBEDDINGS --> VECTOR[Vector Search]
+    VECTOR --> RETRIEVAL[Semantic Retrieval]
+    API --> RETRIEVAL
+    RETRIEVAL --> BEDROCK[Amazon Bedrock Model]
+    BEDROCK --> API
+    API --> FRONTEND
 ```
 
-No component boundaries, network paths, queues, failure handling, or security controls can be confirmed from the checked-in project. In a future implementation, document authentication and authorization at each boundary, encryption in transit and at rest, tenant or patient data isolation, retry and idempotency behavior, and the effect of dependency outages. Do not treat this conceptual diagram as an approved deployment design.
+Actual components, service boundaries, and data flows must be verified as implementation progresses.
 
-## Technology and AWS services
+## Technology Direction
 
-The project brief names AWS, Amazon Bedrock, vector search, and PostgreSQL as intended technologies. The repository does not include dependency declarations, code, or infrastructure that verifies any specific AWS service or database product. In particular, it does not establish use of S3, OpenSearch, Aurora, RDS, Lambda, ECS, EKS, or any other named AWS service.
+| Technology | Intended purpose |
+|---|---|
+| AWS | Cloud infrastructure and managed services |
+| Amazon Bedrock | Foundation-model inference and potentially embedding generation |
+| Vector search | Semantic indexing and retrieval |
+| PostgreSQL | Relational data persistence |
+| Web application | User-facing workflows |
+| Backend API | Business logic and service orchestration |
 
-There are no confirmed AWS regions, accounts, authentication methods, IAM roles, permissions, network rules, or encryption settings. No credentials or environment variables are documented because none are defined in the repository.
+The exact AWS services, model identifiers, vector engine, and application frameworks must be documented from the actual implementation. Do not assume a particular AWS service is deployed without evidence.
 
-## Bedrock, embeddings, and semantic retrieval
+## Repository Structure
 
-There are no configured foundation model or embedding model IDs, inference calls, prompt templates, token limits, retry policies, or model response handling in the repository. It is not possible to say whether inference or embeddings use Bedrock or another provider.
-
-No chunking strategy, embedding dimensions, vector database, similarity metric, index configuration, metadata filters, access controls, or source attribution behavior is present. RAG, citations, and retrieval-grounded response generation are therefore unverified and should not be described as available features.
-
-## Data layer and document pipeline
-
-No PostgreSQL connection settings, SQLAlchemy models, schema, relationships, transaction management, connection pooling, or Alembic migrations are checked in. There is no database initialization or migration command to run. Avoid creating or modifying a database based on assumptions; add a reviewed schema and migration workflow first.
-
-Likewise, no document upload endpoint, file validation, malware scanning, OCR or parsing, queue/worker, object storage, retention policy, or deletion workflow is present. Accepted formats, size limits, processing guarantees, and data lifecycle behavior are unknown.
-
-## Repository layout
+The current repository contains the initial documentation and license:
 
 ```text
 .
@@ -68,80 +88,91 @@ Likewise, no document upload endpoint, file validation, malware scanning, OCR or
 └── README.md
 ```
 
-This is the complete tracked project structure at the time of writing. The local `.venv` directory is a development environment and is not part of the tracked source listing.
+Update this section as application source code, configuration, migrations, tests, and infrastructure definitions are added.
 
-## Prerequisites and local setup
+## Getting Started
 
-Python 3.13.4 was available in the workspace when this README was prepared. No Python package manifest or application entry point is present, so creating a virtual environment is the only currently verifiable Python setup step.
+### Prerequisites
+
+- Git
+- Python, if required by the future backend implementation
+- Node.js, if required by the future frontend implementation
+- AWS account and permissions, when cloud integrations are implemented
+- PostgreSQL, when database integration is implemented
+
+### Clone the Repository
 
 ```bash
-python3 --version
-python3 -m venv .venv
+git clone https://github.com/singhdeepesh20/Nirmaya-AI-Version-2.git
+cd Nirmaya-AI-Version-2
 ```
 
-Activate it with the command for your shell:
+Open the project in Visual Studio Code:
 
 ```bash
-# macOS / Linux (bash or zsh)
-source .venv/bin/activate
-
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
+code .
 ```
 
-There are no dependencies to install from this repository and no server command to run. Once a dependency manifest and application entry point are added, document the supported Python version, install command, and launch command here. Do not copy secrets into this README.
+The current scaffold does not contain application dependencies or a runnable application entry point. Add verified installation and startup instructions when those components are available.
 
-## Configuration
+## AWS and AI Architecture
 
-The repository defines no environment variables or configuration files. A safe example cannot be supplied without knowing the application’s actual configuration interface. When configuration is introduced, commit a placeholder-only `.env.example`, validate required settings at startup, and keep real `.env` files and credentials out of version control. Prefer managed identity or short-lived credentials for cloud access where supported; do not embed long-lived AWS keys in source code.
+Future implementation documentation should identify:
 
-## API, tests, linting, and builds
+- The AWS services actually used.
+- Amazon Bedrock model IDs and inference configuration.
+- Embedding generation and vector index configuration.
+- IAM permissions and credential management.
+- Document storage and access-control boundaries.
+- Logging, monitoring, and operational error handling.
 
-No API routes, OpenAPI document, test suite, linter, formatter, or build configuration is present. There are no repository-backed commands for API inspection, testing, linting, or building. Add these alongside the relevant application code and update this section with commands that have been run successfully.
+Use least-privilege IAM policies and avoid embedding long-lived credentials in source code.
 
-## Security, privacy, and operational readiness
+## PostgreSQL and Data Management
 
-This repository does not implement or demonstrate authentication, authorization, encryption, audit logging, secret management, backups, monitoring, alerting, incident response, or data retention. It provides no basis for claiming that healthcare information is protected or that the platform meets HIPAA or any other regulatory requirement. Compliance depends on the actual system, operating processes, contracts, and applicable jurisdiction; it cannot be inferred from the product description or technology choices.
+The database implementation should document its schema, ORM models, migration workflow, transaction handling, connection management, and backup and recovery procedures.
 
-Before processing real or sensitive health data, establish and review at least:
+No database schema or migration commands are currently verified in the scaffold. Do not run destructive database operations against any environment.
 
-- Data classification, permitted use, retention, deletion, and backup policies.
-- Identity and least-privilege access controls for users, services, and operators.
-- Encryption and key management for stored data, backups, and network traffic.
-- Tenant and patient-level isolation for records, retrieval results, and logs.
-- Safe logging and tracing that avoid storing document contents or sensitive identifiers unnecessarily.
-- Dependency and image management, vulnerability response, audit trails, and incident procedures.
-- Tested restore, outage, retry, and data deletion behavior.
-- Applicable privacy, security, and healthcare regulatory reviews before production use.
+## Security and Privacy
 
-These are readiness areas, not guarantees provided by the current scaffold.
+Security requirements should be designed and validated before processing sensitive healthcare information:
 
-## Deployment
+- Authentication and authorization.
+- Encryption in transit and at rest.
+- Least-privilege access and secret management.
+- Patient and tenant data isolation.
+- Safe logging and audit trails.
+- Data retention, deletion, backup, and recovery.
+- Applicable privacy and regulatory reviews.
 
-There are no Docker files, CI/CD workflows, AWS CDK, CloudFormation, Terraform, Kubernetes manifests, or deployment instructions in the repository. No deployment target or AWS topology can be verified. Do not provision infrastructure based on the conceptual diagram above; first add and review the infrastructure definitions, IAM policies, network design, and operational runbooks.
+This repository does not currently demonstrate these controls or establish regulatory compliance.
 
-## Troubleshooting
+## Roadmap
 
-- **There is no start command:** the repository has no application entry point yet.
-- **There is no dependency install command:** no `pyproject.toml`, requirements file, or equivalent manifest is present.
-- **There is no database setup command:** schema and migration tooling are not present.
-- **AWS or model configuration is unclear:** no service identifiers, model IDs, regions, or configuration keys are defined.
-
-## Roadmap for this repository
-
-The following are suggested next implementation milestones, not existing capabilities:
-
-1. Add application code and define API and user-facing workflows.
-2. Choose and document storage, database, queue, model, and vector-search services.
-3. Implement ingestion, data lifecycle controls, retrieval, and model orchestration with access checks and source attribution as requirements dictate.
-4. Add schema migrations, automated tests, static checks, and reproducible local development instructions.
-5. Add reviewed infrastructure, least-privilege IAM, observability, backup/restore, and deployment runbooks.
-6. Complete privacy, security, and regulatory reviews before handling real health data.
+- [ ] Define application architecture and API contracts.
+- [ ] Implement frontend and backend services.
+- [ ] Verify and integrate AWS services.
+- [ ] Integrate Amazon Bedrock models where required.
+- [ ] Implement document processing and semantic retrieval.
+- [ ] Establish PostgreSQL schema and migrations.
+- [ ] Add automated tests and CI workflows.
+- [ ] Implement monitoring, security controls, and recovery procedures.
+- [ ] Validate deployment and operational readiness.
 
 ## Contributing
 
-There are no contribution or code review instructions yet. For now, keep changes scoped, document new setup and operational requirements, and include tests and security review appropriate to each feature when implementation begins.
+Contributions should prioritize clear design, maintainability, security, and reproducible development workflows. Document configuration changes and include appropriate tests as implementation evolves.
 
+## License
+
+This project includes an MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  <sub>Built with an emphasis on engineering rigor, responsible AI, and maintainable architecture.</sub>
+</p>
 ## License
 
 This project is distributed under the [MIT License](LICENSE).
