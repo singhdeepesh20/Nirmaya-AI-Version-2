@@ -150,3 +150,34 @@ Before processing real or sensitive health information, design and review:
 - Applicable privacy, security, and regulatory obligations.
 
 These are implementation requirements to address, not protections supplied by the current repository.
+
+## Deployment and operations
+
+There are no container definitions, CI/CD workflows, infrastructure-as-code files, Kubernetes manifests, or deployment runbooks. No deployment target or AWS topology can be confirmed. Do not provision production infrastructure from the conceptual diagram alone.
+
+When deployment is implemented, document the reviewed infrastructure, IAM policies, network boundaries, secrets source, health checks, logs and metrics, alerting, backup and restore process, and recovery steps.
+
+## Roadmap
+
+These are suggested next steps, not existing features:
+
+1. Define user workflows and implement the application and API boundaries.
+2. Select storage, database, queue, model, and vector-search services and document the reasons.
+3. Implement document ingestion, access-controlled retrieval, and model orchestration with source tracking.
+4. Add database migrations, automated checks, and reproducible local development instructions.
+5. Add reviewed infrastructure, observability, backup and restore, and deployment procedures.
+6. Complete privacy, security, and regulatory reviews before handling real health data.
+
+## Contributing
+
+Contribution and review workflows have not been established yet. Keep changes focused, update documentation when introducing setup or operational requirements, and include appropriate tests and security review as implementation begins.
+
+## License
+
+This project is distributed under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  <sub>Built with an emphasis on engineering rigor, responsible AI, and maintainable architecture.</sub>
+</p>
