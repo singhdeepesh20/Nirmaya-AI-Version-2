@@ -94,3 +94,37 @@ No AWS region, IAM role, credential method, network policy, or encryption config
 No foundation model or embedding model identifiers, inference calls, prompt templates, token limits, retries, or response validation are present. It is not possible to confirm whether future inference or embedding generation will use Bedrock or another provider.
 
 There is no chunking policy, embedding dimension, vector index, similarity metric, metadata filter, retrieval access control, or source attribution implementation. Retrieval-augmented generation (RAG), citations, and grounded responses are not available capabilities at this stage.
+
+## Data and document lifecycle
+
+There is no PostgreSQL connection configuration, schema, SQLAlchemy model, relationship, transaction policy, connection pool, or Alembic migration. No database initialization or migration command can be recommended from the current source. Add versioned migrations and a reviewed initialization workflow before depending on a schema.
+
+There is also no upload endpoint, file validation, malware scanning, OCR or parser, background worker, object storage integration, retention rule, or deletion workflow. Supported file formats, size limits, processing guarantees, and data lifecycle behavior remain undefined.
+
+## Repository layout
+
+```text
+.
+├── LICENSE
+└── README.md
+```
+
+The local `.venv` directory, if created, is a development environment and is not part of the tracked source tree.
+
+## Local setup
+
+Python is not pinned by this repository because no application or dependency manifest exists yet. Check that Python 3 is available, then create and activate a virtual environment:
+
+```bash
+python3 --version
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+On Windows PowerShell, activate it with:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+There are no packages to install and no server command to run yet. When application code is added, document its supported Python version, dependency installation, and launch command. To leave the virtual environment, run `deactivate`.
