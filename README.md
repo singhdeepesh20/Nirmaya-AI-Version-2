@@ -62,3 +62,35 @@ These principles describe the intended direction for implementation:
 | License | Root `LICENSE` file | MIT |
 
 The tracked repository consists of `README.md` and `LICENSE`. Update this table and the setup instructions as implementation is added.
+
+## Architecture concept
+
+The diagram is a **proposed concept**, not a deployed or implemented architecture. Dashed arrows show possible future interactions. Storage, vector search, model inference, and service boundaries remain undecided.
+
+```mermaid
+flowchart LR
+    U[User] -. future use .-> FE[Frontend]
+    FE -. request .-> API[Backend API]
+    API -. metadata .-> DB[(PostgreSQL, proposed)]
+    API -. submit document .-> ING[Ingestion and processing]
+    ING -. original files .-> STORE[Document storage, undecided]
+    ING -. vectors .-> IDX[Vector search, undecided]
+    API -. query and context .-> RET[Retrieval orchestration]
+    IDX -. matching passages .-> RET
+    RET -. prompt .-> MODEL[Foundation model, undecided]
+    MODEL -. response .-> API
+```
+
+No queues, network topology, failure handling, or authorization flow can be verified yet. An implementation should define component ownership, check access before retrieval, handle partial failures and retries, and retain enough source information to inspect how a response was produced.
+
+## Technology direction
+
+The project brief names AWS, Amazon Bedrock, vector search, and PostgreSQL as intended technologies. The repository does not confirm a specific cloud service, database product, or application framework. In particular, there is no evidence here of S3, OpenSearch, Aurora, RDS, Lambda, ECS, EKS, or any other named AWS service.
+
+No AWS region, IAM role, credential method, network policy, or encryption configuration is defined. Record selected services and their operational responsibilities when they are implemented; do not treat this section as a deployment inventory.
+
+## AI, embeddings, and retrieval
+
+No foundation model or embedding model identifiers, inference calls, prompt templates, token limits, retries, or response validation are present. It is not possible to confirm whether future inference or embedding generation will use Bedrock or another provider.
+
+There is no chunking policy, embedding dimension, vector index, similarity metric, metadata filter, retrieval access control, or source attribution implementation. Retrieval-augmented generation (RAG), citations, and grounded responses are not available capabilities at this stage.
