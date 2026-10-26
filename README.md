@@ -128,3 +128,25 @@ On Windows PowerShell, activate it with:
 ```
 
 There are no packages to install and no server command to run yet. When application code is added, document its supported Python version, dependency installation, and launch command. To leave the virtual environment, run `deactivate`.
+
+## Configuration and developer commands
+
+No environment variables, configuration files, API routes, or OpenAPI specification are defined. There is no test, lint, type-check, or build configuration, so the repository currently has no project verification commands. Add commands here only after the corresponding tooling is checked in.
+
+When runtime configuration is introduced, provide a placeholder-only `.env.example`, validate required values at startup, and exclude real `.env` files and credentials from version control. Prefer short-lived or managed AWS credentials where supported; never commit access keys, tokens, private keys, or health data.
+
+## Security and privacy
+
+The repository does not demonstrate authentication, authorization, encryption, audit logging, secret management, backups, monitoring, incident response, or data retention. It provides no basis for claiming that health information is protected or that the system meets HIPAA or another regulatory requirement. Compliance depends on the implemented system, operating practices, contracts, and applicable jurisdiction.
+
+Before processing real or sensitive health information, design and review:
+
+- Data classification, permitted uses, retention, deletion, and backup behavior.
+- Least-privilege access for users, operators, and service identities.
+- Encryption and key management for network traffic, storage, and backups.
+- Tenant and patient-level isolation for database records and retrieved passages.
+- Logging and tracing that avoid unnecessary document contents and sensitive identifiers.
+- Dependency maintenance, audit trails, incident response, and tested restore procedures.
+- Applicable privacy, security, and regulatory obligations.
+
+These are implementation requirements to address, not protections supplied by the current repository.
