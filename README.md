@@ -34,11 +34,7 @@ Nirmaya AI V2 is an early-stage project for exploring AI-assisted healthcare doc
 - [Repository layout](#repository-layout)
 - [Local setup](#local-setup)
 - [Configuration and developer commands](#configuration-and-developer-commands)
-- [Security and privacy](#security-and-privacy)
-- [Deployment and operations](#deployment-and-operations)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Engineering principles
 
