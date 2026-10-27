@@ -23,7 +23,7 @@ Nirmaya AI V2 is an early-stage project for exploring AI-assisted healthcare doc
 
 > **Current repository status:** this is a documentation scaffold. It contains a README and MIT license, but no running application, dependencies, database schema, cloud infrastructure, or AI integration. AWS, Amazon Bedrock, vector search, and PostgreSQL are named in the project brief as intended technologies; no implementation of them is present here.
 
-## Contents
+### Contents
 
 - [Engineering principles](#engineering-principles)
 - [Project status](#project-status)
