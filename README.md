@@ -17,7 +17,7 @@
 
 ---
 
-## Overview
+### Overview
 
 Nirmaya AI V2 is an early-stage project for exploring AI-assisted healthcare document workflows and information retrieval. The product direction mentions document processing, semantic search, and context-aware AI experiences.
 
