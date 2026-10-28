@@ -174,4 +174,3 @@ This project is distributed under the [MIT License](LICENSE).
 
 <p align="center">
   <sub>Built with an emphasis on engineering rigor, responsible AI, and maintainable architecture.</sub>
-</p>
