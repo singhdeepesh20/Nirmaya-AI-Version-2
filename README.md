@@ -172,5 +172,5 @@ This project is distributed under the [MIT License](LICENSE).
 
 ---
 
-<p align="center">
+
  
