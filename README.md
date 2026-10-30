@@ -164,7 +164,7 @@ These are suggested next steps, not existing features:
 
 ## Contributing
 
-Contribution and review workflows have not been established yet. Keep changes focused, update documentation when introducing setup or operational requirements, and include appropriate tests and security review as implementation begins.
+Contribution and review workflows have not been established yet. For documentation changes, keep the scope focused, verify claims against tracked files, and update the project status table when repository capabilities change. Before proposing an implementation, describe its setup, configuration, and security implications. Include appropriate tests and security review as application code is introduced.
 
 ## License
 
