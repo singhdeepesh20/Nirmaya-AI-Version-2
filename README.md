@@ -27,7 +27,11 @@ Nirmaya AI V2 is an early-stage project for exploring AI-assisted healthcare doc
 
 - [Engineering principles](#engineering-principles)
 - [Project status](#project-status)
+- [Repository snapshot](#repository-snapshot)
 - [Architecture concept](#architecture-concept)
+- [Document workflow concept](#document-workflow-concept)
+- [Document lifecycle concept](#document-lifecycle-concept)
+- [Roadmap timeline](#roadmap-timeline)
 - [Technology direction](#technology-direction)
 - [AI, embeddings, and retrieval](#ai-embeddings-and-retrieval)
 - [Data and document lifecycle](#data-and-document-lifecycle)
@@ -56,6 +60,17 @@ These principles describe the intended direction for implementation:
 | License | Root `LICENSE` file | MIT |
 
 The tracked repository consists of `README.md` and `LICENSE`. Update this table and the setup instructions as implementation is added.
+
+### Repository snapshot
+
+This chart summarizes the implementation status recorded above. It describes this repository today, not a product capability forecast.
+
+```mermaid
+pie showData
+    title Tracked implementation areas
+    "Not implemented or configured" : 5
+    "Documentation only" : 1
+```
 
 ## Architecture concept
 
