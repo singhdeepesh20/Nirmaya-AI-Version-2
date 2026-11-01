@@ -25,8 +25,7 @@ Nirmaya AI V2 is an early-stage project for exploring AI-assisted healthcare doc
 
 
 
-- [Technology direction](#technology-direction)
-- [AI, embeddings, and retrieval](#ai-embeddings-and-retrieval)
+
 - [Data and document lifecycle](#data-and-document-lifecycle)
 
 
