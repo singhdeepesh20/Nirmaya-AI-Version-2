@@ -1,7 +1,7 @@
 # Nirmaya AI V2
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=30&duration=3000&pause=900&color=0F766E&center=true&vCenter=true&width=850&lines=Nirmaya+AI+V2;AI-Powered+Healthcare+Technology;Building+Intelligent+Retrieval+Systems" alt="Nirmaya AI V2 animated title" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=30&duration=2600&pause=850&color=0F766E&center=true&vCenter=true&width=850&lines=Nirmaya+AI+V2;Exploring+Healthcare+Document+Workflows;Designing+Grounded+Information+Retrieval" alt="Animated title: Nirmaya AI V2, exploring healthcare document workflows, and designing grounded information retrieval" />
 </p>
 
 <p align="center">
