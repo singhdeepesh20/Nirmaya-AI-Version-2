@@ -217,6 +217,26 @@ These are suggested next steps, not existing features:
 5. Add reviewed infrastructure, observability, backup and restore, and deployment procedures.
 6. Complete privacy, security, and regulatory reviews before handling real health data.
 
+### Roadmap timeline
+
+This is a dependency-oriented view of the suggested sequence, with no dates or delivery commitments implied.
+
+```mermaid
+gantt
+    title Suggested implementation sequence (undated)
+    dateFormat X
+    axisFormat %s
+    section Foundations
+    Define workflows and boundaries :a1, 0, 1
+    Select storage and services    :a2, after a1, 1
+    section Core capabilities
+    Build ingestion and retrieval  :b1, after a2, 2
+    Add migrations and checks      :b2, after a2, 1
+    section Operations
+    Review security and privacy    :c1, after b1, 1
+    Add deployment and recovery    :c2, after b2, 1
+```
+
 ## Contributing
 
 Contribution and review workflows have not been established yet. For documentation changes, keep the scope focused, verify claims against tracked files, and update the project status table when repository capabilities change. Before proposing an implementation, describe its setup, configuration, and security implications. Include appropriate tests and security review as application code is introduced.
