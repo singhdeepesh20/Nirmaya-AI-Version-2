@@ -131,6 +131,25 @@ There is no PostgreSQL connection configuration, schema, SQLAlchemy model, relat
 
 There is also no upload endpoint, file validation, malware scanning, OCR or parser, background worker, object storage integration, retention rule, or deletion workflow. Supported file formats, size limits, processing guarantees, and data lifecycle behavior remain undefined.
 
+### Document lifecycle concept
+
+This state diagram is a planning aid for a future ingestion flow. Its states and transitions are not implemented or guaranteed behavior.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Received
+    Received --> Validating
+    Validating --> Rejected: Invalid or unsupported
+    Validating --> Processing: Accepted
+    Processing --> Indexed: Processing succeeds
+    Processing --> Failed: Processing error
+    Failed --> Processing: Retry, if allowed
+    Indexed --> DeletionRequested: Retention or user request
+    Rejected --> Deleted
+    DeletionRequested --> Deleted
+    Deleted --> [*]
+```
+
 ## Repository layout
 
 ```text
