@@ -92,6 +92,27 @@ flowchart LR
 
 No queues, network topology, failure handling, or authorization flow can be verified yet. An implementation should define component ownership, check access before retrieval, handle partial failures and retries, and retain enough source information to inspect how a response was produced.
 
+### Document workflow concept
+
+The sequence below sketches a possible request path. It is illustrative only; none of these services or steps are implemented in this repository.
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant App as Future application
+    participant API as Future API
+    participant Retrieval as Retrieval service, undecided
+    participant Model as Model provider, undecided
+    User->>App: Ask a question
+    App->>API: Send question and access context
+    API->>Retrieval: Find permitted source passages
+    Retrieval-->>API: Return passages with source references
+    API->>Model: Request an answer grounded in passages
+    Model-->>API: Return generated response
+    API-->>App: Answer with source references
+    App-->>User: Show response and sources
+```
+
 ## Technology direction
 
 The project brief names AWS, Amazon Bedrock, vector search, and PostgreSQL as intended technologies. The repository does not confirm a specific cloud service, database product, or application framework. In particular, there is no evidence here of S3, OpenSearch, Aurora, RDS, Lambda, ECS, EKS, or any other named AWS service.
